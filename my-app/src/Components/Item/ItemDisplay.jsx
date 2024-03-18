@@ -12,7 +12,6 @@ function ItemDisplay({ listItems }) {
           name={item.name}
           price={item.price}
           image={item.image}
-          
           quantity={item.quantity}
 
         />

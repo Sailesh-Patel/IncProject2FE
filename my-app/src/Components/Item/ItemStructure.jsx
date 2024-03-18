@@ -27,9 +27,10 @@ function ItemStructure(props) {
     <div id="itemCard" className="card-group d-inline-flex padding" style={{padding: "20px"}}>
       <div class="card border-dark mb-3" style={{width: "17%"}}>
         <ul class="list-group list-group-flush">
+           <img src={props.image} width="120px"></img>         
           <li class="list-group-item">Name: {props.name} </li>
           <li class="list-group-item">Price: £{props.price} </li>
-          <li class="list-group-item">Image: {props.image} </li>
+
           <li class="list-group-item">Quantity: {props.quantity} </li>
         </ul>
       <button type="button" onClick={handleAddToBasket} className="btn btn-success ">

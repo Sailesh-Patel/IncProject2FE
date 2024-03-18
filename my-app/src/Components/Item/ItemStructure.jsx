@@ -29,6 +29,8 @@ function ItemStructure(props) {
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: {props.name} </li>
           <li class="list-group-item">Price: £{props.price} </li>
+          <li class="list-group-item">Image: {props.image} </li>
+          <li class="list-group-item">Quantity: {props.quantity} </li>
         </ul>
       <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
         Add to basket
@@ -43,6 +45,7 @@ ItemStructure.propTypes = {
   name: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 };
 

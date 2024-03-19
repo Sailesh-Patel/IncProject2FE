@@ -25,9 +25,9 @@ function App() {
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <li class="nav-item">
+              {/* <li class="nav-item">
                 <Link class="nav-item nav-link active" to="/">Login</Link>
-              </li>
+              </li> */}
               <li class="nav-item">
                 <Link className="nav-item nav-link active" to='/home'>Home</Link>
               </li>
@@ -37,9 +37,9 @@ function App() {
               <li class="nav-item">
                 <Link className="nav-item nav-link active" to='/basket'>Basket</Link>
               </li>
-              <li class="nav-item ">
+              {/* <li class="nav-item ">
                 <Link className="nav-item nav-link active" to='/createitems'>Admin</Link>
-              </li>
+              </li> */}
           </div>
           </div>
       </nav>

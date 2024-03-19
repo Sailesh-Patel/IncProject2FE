@@ -64,10 +64,6 @@ function ItemTable(props) {
                                         axios.delete("http://localhost:8088/item/delete/" + item.id)
                                             .then(res => {
                                                 getItems()
-
-
-                                               
-
                                             })
                                             .catch(err => console.error(err));
 

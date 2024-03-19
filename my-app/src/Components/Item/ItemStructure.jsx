@@ -36,7 +36,7 @@ function ItemStructure(props) {
       <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
         Add to basket
       </button>
-      <button type="button" onClick={deleteItem} className="btn btn-danger">Delete</button>
+      {/* <button type="button" onClick={deleteItem} className="btn btn-danger">Delete</button> */}
       </div>
     </div>
   );

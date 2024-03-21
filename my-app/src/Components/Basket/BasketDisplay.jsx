@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+// import {handleAddToBasket} from "ItemStructure";
 // import "./BasketDisplay.css";
 
 function BasketsDisplay() {
@@ -53,14 +54,16 @@ function BasketsDisplay() {
                     Price: £{basketItem.price} 
                     </div>
                     
-                    <div className="quantity"> 
-                    Quantity: 
+                    {/* <div className="quantity"> 
+                    Quantity:  */}
                     {/* <button onClick={() => setQuantity(quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button>  */}
-                    <div id="quantityChange" className="quantity">{basketItem.quantity}</div>
+                    {/* <div id="quantityChange" className="quantity">{basketItem.quantity}</div> */}
                    {/* <button onClick={() => setQuantity(quantity + 1)} className="increment" class="bi bi-plus-lg">+</button> */}
 
                     {/* {basketItem.quantity} */}
-                    </div>
+                    {/* </div> */}
+
+                    
                     <br></br>
                   </div>
                 ))}

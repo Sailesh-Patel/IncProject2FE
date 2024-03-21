@@ -37,17 +37,21 @@ function ItemStructure(props) {
 
 
 
-          <li class="list-group-item">Quantity: 
+          {/* <li class="list-group-item">Quantity:  */}
           {/* {props.quantity}  */}
-<br></br>
+
 
                                        {/* <button onClick={() => setQuantity(props.quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button> */}
                                        
-                                        <div id="quantityChange" className="quantity">{props.quantity}</div>
+                                        {/* <div id="quantityChange" className="quantity">{props.quantity}</div> */}
 
                                         {/* <button onClick={() => setQuantity(props.quantity + 1)} className="increment" class="bi bi-plus-lg">+</button> */}
 
-</li> 
+{/* </li>  */}
+
+
+
+<li class="list-group-item">Bulk Size: {props.bulkSize}</li>
 
         </ul>
       <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
@@ -62,8 +66,10 @@ function ItemStructure(props) {
 ItemStructure.propTypes = {
   name: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
+  bulkSize: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 };
 

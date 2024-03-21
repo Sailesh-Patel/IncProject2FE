@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./BasketDisplay.css";
+// import "./BasketDisplay.css";
 
 function BasketsDisplay() {
   const [baskets, setBaskets] = useState([]);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState();
 
   useEffect(() => {
     axios.get("http://localhost:8088/basket/get")
@@ -52,16 +52,15 @@ function BasketsDisplay() {
                     <div> 
                     Price: £{basketItem.price} 
                     </div>
-                    <div className="quantity">
-                      
-                    <button onClick={() => setQuantity(quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button>
-          
-                   <div id="quantityChange" className="quantity">{quantity}</div>
-
+                    
+                    <div className="quantity"> 
+                    Quantity: <button onClick={() => setQuantity(quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button> 
+                    <div id="quantityChange" className="quantity">{quantity}</div>
                    <button onClick={() => setQuantity(quantity + 1)} className="increment" class="bi bi-plus-lg">+</button>
 
                     {/* {basketItem.quantity} */}
                     </div>
+                    <br></br>
                   </div>
                 ))}
                 <br/>

@@ -7,7 +7,7 @@ import "./ItemStructure.css";
 function ItemStructure(props) {
   const navigate = useNavigate();
   const [count, setCount] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState();
 
 
   const handleAddToBasket = () => {
@@ -41,11 +41,11 @@ function ItemStructure(props) {
           {/* {props.quantity}  */}
 <br></br>
 
-                                       <button onClick={() => setQuantity(quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button>
+                                       <button onClick={() => setQuantity(props.quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button>
                                        
-                                        <div id="quantityChange" className="quantity">{quantity}</div>
+                                        <div id="quantityChange" className="quantity">{props.quantity}</div>
 
-                                        <button onClick={() => setQuantity(quantity + 1)} className="increment" class="bi bi-plus-lg">+</button>
+                                        <button onClick={() => setQuantity(props.quantity + 1)} className="increment" class="bi bi-plus-lg">+</button>
 
 </li> 
 

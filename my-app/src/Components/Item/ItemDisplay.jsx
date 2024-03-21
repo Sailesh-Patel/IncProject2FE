@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ItemStructure from "./ItemStructure";
+import "./ItemDisplay.css";
 
 function ItemDisplay({ listItems }) {
   return (
-    <div>
+    <div className="container">
       {listItems.map((item) => (
         <ItemStructure
           key={item.id}

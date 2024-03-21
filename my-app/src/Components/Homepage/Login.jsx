@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 
-
+<html lang="en"></html>
 
 
 function Login() {
@@ -35,7 +35,7 @@ function Login() {
 
   return (
 <div>
-<h1 className="title" style={{ textAlign: "center" }}>Login Form</h1>
+<h2 className="title" style={{ textAlign: "center" }}>Login Form</h2>
   <div className="card-group d-inline-flex padding" style={{ padding: "10px" }}>
     <div class="card border-dark mb-3" style={{ width: "17%" }}>
       
@@ -44,7 +44,7 @@ function Login() {
         <div className="row">
           <div className="col">
             <div label htmlFor="name" className="form-label">
-              <h4>Create your Username</h4>
+              <h3>Create your Username</h3>
             </div>
             <input
               type="text"

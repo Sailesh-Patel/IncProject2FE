@@ -12,7 +12,7 @@ function ItemStructure(props) {
 
   const handleAddToBasket = () => {
     axios
-      .patch(`http://localhost:8088/item/add/${props.id}/5`)
+      .patch(`http://localhost:8088/item/add/${props.id}/6`)
       .then(() => {
         navigate("/items");
       })
@@ -41,11 +41,11 @@ function ItemStructure(props) {
           {/* {props.quantity}  */}
 <br></br>
 
-                                       <button onClick={() => setQuantity(props.quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button>
+                                       {/* <button onClick={() => setQuantity(props.quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button> */}
                                        
                                         <div id="quantityChange" className="quantity">{props.quantity}</div>
 
-                                        <button onClick={() => setQuantity(props.quantity + 1)} className="increment" class="bi bi-plus-lg">+</button>
+                                        {/* <button onClick={() => setQuantity(props.quantity + 1)} className="increment" class="bi bi-plus-lg">+</button> */}
 
 </li> 
 

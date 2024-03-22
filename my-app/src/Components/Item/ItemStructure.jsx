@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import "./ItemStructure.css";
 
 function ItemStructure(props) {
   const navigate = useNavigate();
+  const [count, setCount] = useState(0);
+  const [quantity, setQuantity] = useState();
+
 
   const handleAddToBasket = () => {
     axios
-      .patch(`http://localhost:8088/item/add/${props.id}/1`)
+      .patch(`http://localhost:8088/item/add/${props.id}/6`)
       .then(() => {
         navigate("/items");
       })
@@ -31,7 +35,24 @@ function ItemStructure(props) {
           <li class="list-group-item">Name: {props.name} </li>
           <li class="list-group-item">Price: £{props.price} </li>
 
-          <li class="list-group-item">Quantity: {props.quantity} </li>
+
+
+          {/* <li class="list-group-item">Quantity:  */}
+          {/* {props.quantity}  */}
+
+
+                                       {/* <button onClick={() => setQuantity(props.quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button> */}
+                                       
+                                        {/* <div id="quantityChange" className="quantity">{props.quantity}</div> */}
+
+                                        {/* <button onClick={() => setQuantity(props.quantity + 1)} className="increment" class="bi bi-plus-lg">+</button> */}
+
+{/* </li>  */}
+
+
+
+<li class="list-group-item">Bulk Size: {props.bulkSize}</li>
+
         </ul>
       <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
         Add to basket
@@ -45,8 +66,10 @@ function ItemStructure(props) {
 ItemStructure.propTypes = {
   name: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
+  bulkSize: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 };
 

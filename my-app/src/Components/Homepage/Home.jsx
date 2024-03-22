@@ -1,3 +1,6 @@
+
+<html lang="en"></html>
+
 function Home() {
     return (
         <div>

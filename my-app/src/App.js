@@ -13,6 +13,7 @@ import BasketEdit from './Components/Basket/BasketEdit.jsx';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import DarkMode from "./Components/DarkMode/DarkMode.js";
 import { Navbar } from "./Components/navbar/Navbar.jsx";
+import CheckOut from './Components/Checkout/CheckOut.jsx';
 
 
 
@@ -84,9 +85,9 @@ function App() {
                     <DarkMode />
                   </li> */}
 
-                  <li class="nav-item ">
+                  {/* <li class="nav-item ">
                     <Link className="nav-item nav-link active" to='/createitems'>Admin</Link>
-                  </li>
+                  </li> */}
 </ul>
 
               </div>
@@ -106,6 +107,7 @@ function App() {
               <Route path='/createitems' element={<CreateItemPage />} />
               <Route path='/item/update/:id' element={<ItemEdit />} />
               <Route path='/basket/update/:id' element={<BasketEdit />} />
+              <Route path='/checkout' element={<CheckOut />} />
             </Routes>
           </div>
 

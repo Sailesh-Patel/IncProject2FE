@@ -39,8 +39,8 @@ function Login() {
   <div className="card-group d-inline-flex padding" style={{ padding: "10px" }}>
     <div class="card border-dark mb-3" style={{ width: "17%" }}>
       
-    <form className="App" onSubmit={handleSubmit}>
-      <div className="container" id="CreateBasket">
+    <form className="container" onSubmit={handleSubmit}>
+      <div className="context" id="CreateBasket">
         <div className="row">
           <div className="col">
             <div label htmlFor="name" className="form-label">

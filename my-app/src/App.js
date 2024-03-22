@@ -14,7 +14,7 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import DarkMode from "./Components/DarkMode/DarkMode.js";
 import { Navbar } from "./Components/navbar/Navbar.jsx";
 import CheckOut from './Components/Checkout/CheckOut.jsx';
-
+import Support from './Components/Support/Support.jsx';
 
 
 function App() {
@@ -40,8 +40,9 @@ function App() {
 
         <Router>
           <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#" aria-label="navbar band"></a>
-            <Link to="/">
+            <a class="navbar-brand" href="#" aria-labelled="Navigation bar"></a>
+            <Link to="/"
+              aria-labelled='Navigation link to the login page'>
               <img src={Logo} alt='Logo Icon' className="navbar-brand" width="75px" />
             </Link>
 
@@ -52,42 +53,51 @@ function App() {
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav">
 
+     
 
 <ul>
 
-                {/* <li class="nav-item">
-                  <Link class="nav-item nav-link active" to="/">Login</Link>
-                </li> */}
-  
-                  <li class="nav-item">
-                    <Link className="nav-item nav-link active" to='/home' aria-label="navigate to home page">Home</Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link className="nav-item nav-link active" to='/items' aria-label="navigate to item page">Items</Link>
-                  </li>
+              <li class="nav-item">
+                <Link class="nav-item nav-link active" to="/"
+                  aria-describedby='Navigation link to the login page'>Login</Link>
+              </li>
 
                   <li class="nav-item">
-                    <Link className="nav-item nav-link active" to='/basket' aria-label="navigate to basket page">
+                    <Link className="nav-item nav-link active" to='/home' 
+                    aria-describedby='Navigation link to the home page'>Home</Link>
+                  </li>
+
+
+
+                  <li class="nav-item">
+                    <Link className="nav-item nav-link active" to='/items' 
+                  aria-describedby='Navigation link to the items page'>Items</Link>
+              </li>
+
+
+
+
+              <li class="nav-item">
+                <Link className="nav-item nav-link active" to='/basket'
+                  aria-describedby='Navigation link to the basket page'>
                       <ShoppingBasketIcon />
-                      
                       {/* Basket */}
-
-
-
                       {/* <span className="header_optionLineTwo header_basketCount">{.length}</span> */}
-
-
-
                     </Link>
-                  </li>
+                  </li>                  
 
+              <li class="nav-item ">
+                <Link className="nav-item nav-link active" to='/support'
+                  aria-describedby='Navigation link to the support page'>Support</Link>
+              </li>
                   {/* <li>
                     <DarkMode />
                   </li> */}
 
-                  {/* <li class="nav-item ">
-                    <Link className="nav-item nav-link active" to='/createitems'>Admin</Link>
-                  </li> */}
+              <li class="nav-item ">
+                <Link className="nav-item nav-link active" to='/createitems'
+                  aria-describedby='Navigation link to the create items page'>Admin</Link>
+              </li>
 </ul>
 
               </div>
@@ -102,18 +112,20 @@ function App() {
             <Routes>
               <Route path='/' element={<Login />} />
               <Route path='/home' element={<Home />} />
-              <Route path='/basket' element={<BasketPage />} />
+            <Route path='/basket' aria-describedby='Navigation link to the basket page' element={<BasketPage />} />
               <Route path='/items' element={<PageForItem />} />
               <Route path='/createitems' element={<CreateItemPage />} />
               <Route path='/item/update/:id' element={<ItemEdit />} />
               <Route path='/basket/update/:id' element={<BasketEdit />} />
               <Route path='/checkout' element={<CheckOut />} />
+              <Route path='/support' element={<Support />} />
             </Routes>
           </div>
 
         </Router>
       </div>
       );
+
 }
 
       export default App;

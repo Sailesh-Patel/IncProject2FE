@@ -10,14 +10,15 @@ import React from 'react';
 import Login from './Components/Homepage/Login.jsx';
 import ItemEdit from './Components/Item/ItemEdit.jsx';
 import BasketEdit from './Components/Basket/BasketEdit.jsx';
+import Support from './Components/Support/Support.jsx';
 
 function App() {
   return (
-  <div class="p-3 mb-2 bg-warning text-dark" style={{ overflow: "auto" }}>
-    <Router>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#"></a>
-        <Link to="/">
+    <div class="p-3 mb-2 bg-warning text-dark" style={{ overflow: "auto" }}>
+      <Router>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <a class="navbar-brand" href="#" aria-labelled="Navigation bar"></a>
+          <Link to="/" aria-labelled='Navigation link to the login page'>
             <img src={Logo} alt='Logo Icon' className="navbar-brand" width="75px" />
           </Link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,37 +27,47 @@ function App() {
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <li class="nav-item">
-                <Link class="nav-item nav-link active" to="/">Login</Link>
+                <Link class="nav-item nav-link active" to="/"
+                  aria-describedby='Navigation link to the login page'>Login</Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-item nav-link active" to='/home'>Home</Link>
+                <Link className="nav-item nav-link active" to='/home'
+                  aria-describedby='Navigation link to the home page'>Home</Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-item nav-link active" to='/items'>Items</Link>
+                <Link className="nav-item nav-link active" to='/items'
+                  aria-describedby='Navigation link to the items page'>Items</Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-item nav-link active" to='/basket'>Basket</Link>
+                <Link className="nav-item nav-link active" to='/basket'
+                  aria-describedby='Navigation link to the basket page'>Basket</Link>
               </li>
               <li class="nav-item ">
-                <Link className="nav-item nav-link active" to='/createitems'>Admin</Link>
+                <Link className="nav-item nav-link active" to='/createitems'
+                  aria-describedby='Navigation link to the create items page'>Admin</Link>
               </li>
+              <li class="nav-item ">
+                <Link className="nav-item nav-link active" to='/support'
+                  aria-describedby='Navigation link to the support page'>Support</Link>
+              </li>
+            </div>
           </div>
-          </div>
-      </nav>
-      <div >
-        <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/basket' element={<BasketPage />} />
-          <Route path='/items' element={<PageForItem />} />
-          <Route path='/createitems' element={<CreateItemPage/>} />
-          <Route path='/item/update/:id' element={<ItemEdit/>} />
-          <Route path='/basket/update/:id' element={<BasketEdit/>} />
-        </Routes>
-      </div>
+        </nav>
+        <div >
+          <Routes>
+            <Route path='/' element={<Login />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/basket' aria-describedby='Navigation link to the basket page' element={<BasketPage />} />
+            <Route path='/items' element={<PageForItem />} />
+            <Route path='/createitems' element={<CreateItemPage />} />
+            <Route path='/item/update/:id' element={<ItemEdit />} />
+            <Route path='/basket/update/:id' element={<BasketEdit />} />
+            <Route path='/support' element={<Support />} />
+          </Routes>
+        </div>
 
-    </Router>
-  </div>
+      </Router>
+    </div>
   );
 }
 

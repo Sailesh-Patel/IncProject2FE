@@ -33,7 +33,7 @@ function BasketsDisplay() {
           <div class="card-body"></div>
           {baskets.map(basket => (
             <div key={basket.id}>
-              <h3>{basket.name}</h3>
+              <h3>Basket Name: {basket.name}</h3>
               <div>
                 {basket.items.map(basketItem => (
                   <div key={basketItem.id}>

@@ -26,7 +26,7 @@ function Login() {
       .post("http://localhost:8088/basket/create", { name, items: [] })
       .then((response) => {
         setName("");
-        navigate("/items");
+        navigate("/home");
       })
       .catch((err) => console.error(err));
   };
@@ -68,7 +68,7 @@ function Login() {
         <button type="submit" id="SubmitCreateBasket" disabled={BasketExists} className="btn btn-primary" 
         style={{textAlign: "center"}}
         onSubmit={() => {
-          navigate("/items");
+          navigate("/home");
         }}
         >
         Sign in

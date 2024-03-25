@@ -12,7 +12,7 @@ function ItemStructure(props) {
 
   const handleAddToBasket = () => {
     axios
-      .patch(`http://localhost:8088/item/add/${props.id}/6`)
+      .patch(`http://localhost:8088/item/add/${props.id}/1`)
       .then(() => {
         navigate("/items");
       })

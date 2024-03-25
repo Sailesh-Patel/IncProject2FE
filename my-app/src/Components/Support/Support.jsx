@@ -1,5 +1,5 @@
-import Logo from 'C:/Users/User/Incubation/IncProject2FE/my-app/src/Pictures/AA.png';
-import Logo2 from 'C:/Users/User/Incubation/IncProject2FE/my-app/src/Pictures/UBER.png';
+import Logo from "../../Pictures/AA.png";
+import Logo2 from "../../Pictures/UBER.png";
 
 function Support() {
     return (

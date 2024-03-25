@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function CheckOut() {
-  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const [baskets, setBaskets] = useState([]);
 
@@ -13,10 +14,11 @@ function CheckOut() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:8088/basket/create", { name, items: [] })
+      .post("http://localhost:8088/checkout/create", { phone, email })
       .then((response) => {
-        setName("");
-        navigate("/items");
+        setPhone("");
+        setEmail("");
+        navigate("/home");
       })
       .catch((err) => console.error(err));
   };
@@ -39,14 +41,22 @@ return (
             placeholder="Enter Phone Number"
             id="phone number"
             size="20"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             required
 
           />
                <br />
                   <br />
-      <input type="Email Address" placeholder="Enter Email Address" />
+      <input type="Email Address" 
+      placeholder="Enter Email Address" 
+      id="email"
+      size="30"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+      
+      />
       <br />
         </div>
       </div>
@@ -56,7 +66,7 @@ return (
       <button type="submit" id="SubmitCreateBasket"  className="btn btn-primary" 
       style={{textAlign: "center"}}
       onSubmit={() => {
-        navigate("/items");
+        navigate("/home");
       }}
       >
       Submit

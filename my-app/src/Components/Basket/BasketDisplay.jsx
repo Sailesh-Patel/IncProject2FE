@@ -29,8 +29,13 @@ function BasketsDisplay() {
       return 0;
     }
 
-    return items.reduce((total, item) => total + item.price, 0);
-  };
+  //   return items.reduce((total, item) => total + item.price, 0);
+  // };
+  const totalPrice = items.reduce((total, item) => total + item.price, 0);
+  
+  return Math.round(totalPrice * 100) / 100; // Round to 2 decimal places
+};
+
 
 
     const calculateTotalQuantity = (items) => {

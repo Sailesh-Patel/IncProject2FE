@@ -36,7 +36,7 @@ function Login() {
   return (
 <div>
 <h2 className="title" style={{ textAlign: "center" }}>Login Form</h2>
-  <div className="card-group d-inline-flex padding" style={{ padding: "10px" }}>
+  <div class="d-flex justify-content-center" style={{ padding: "10px" }}>
     <div class="card border-dark mb-3" style={{ width: "17%" }}>
       
     <form className="container" onSubmit={handleSubmit}>

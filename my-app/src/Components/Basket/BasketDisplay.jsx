@@ -48,7 +48,7 @@ function BasketsDisplay() {
 
   return (
     <div>
-      <div className="card-group d-inline-flex padding" style={{ padding: "10px" }}>
+      <div class="d-flex justify-content-center" style={{ padding: "10px" }}>
         <div class="card border-dark mb-3" style={{ width: "17%", textAlign: "center" }}>
           <div class="card-body"></div>
           {baskets.map(basket => (

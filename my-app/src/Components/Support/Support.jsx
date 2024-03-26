@@ -5,7 +5,7 @@ function Support() {
     return (
         <div>
             <br />
-            <h1>"We want to support you!”</h1>
+            <h1 class="d-flex justify-content-center">"We want to support you!”</h1>
             <br />
             <br />
             <br />

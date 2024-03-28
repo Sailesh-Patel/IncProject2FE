@@ -7,12 +7,14 @@ import "./ItemStructure.css";
 function ItemStructure(props) {
   const navigate = useNavigate();
   const [count, setCount] = useState(0);
+
   const [quantity, setQuantity] = useState();
+
 
 
   const handleAddToBasket = () => {
     axios
-      .patch(`http://localhost:8088/item/add/${props.id}/1`)
+      .patch(`http://localhost:8088/item/add/${props.id}/5`)
       .then(() => {
         navigate("/items");
       })
@@ -36,6 +38,7 @@ function ItemStructure(props) {
           <li class="list-group-item">Price: £{props.price} </li>
 
 
+
 {/* Code held for future sprint */}
 
           {/* <li class="list-group-item">Quantity:
@@ -49,10 +52,12 @@ function ItemStructure(props) {
 
 <li class="list-group-item">Bulk Size: {props.bulkSize}</li>
 
+
         </ul>
       <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
         Add to basket
       </button>
+
       </div>
     </div>
   );
@@ -64,7 +69,9 @@ ItemStructure.propTypes = {
   bulkSize: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
+
   imageAlt: PropTypes.string.isRequired,
+
   id: PropTypes.number.isRequired,
 };
 

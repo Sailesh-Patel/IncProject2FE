@@ -8,7 +8,9 @@ import ItemTable from "./ItemTable";
 function CreateItemPage() {
     return (
         <div>
+
             <h1 class="d-flex justify-content-center">Create items</h1>
+
             <CreateItem/>
             <ItemTable/>
             <BasketsDisplay/>

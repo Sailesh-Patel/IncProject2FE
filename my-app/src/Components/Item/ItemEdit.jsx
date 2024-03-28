@@ -16,6 +16,7 @@ function ItemEdit() {
         const [bulkSize, setBulkSize] = useState("")
 
 
+
         useEffect(function getItems() {
 
             axios.get("http://localhost:8088/item/get/" + params.id)
@@ -25,8 +26,10 @@ function ItemEdit() {
                     setPrice(response.data.price);
                     setQuantity(response.data.quantity);
                     setImage(response.data.image);
+
                     setImageAlt(response.data.imageAlt);
                     setBulkSize(response.data.bulkSize);
+
                 })
                 .catch((error) => console.log(error));
         }, []);
@@ -34,7 +37,9 @@ function ItemEdit() {
         function editItem() {
 
             axios.patch("http://localhost:8088/item/update/" + params.id,
+
                 { name, price, quantity, image, imageAlt, bulkSize })
+
                 .then(() => {
                     navigate(-1);
                 }).catch(err => console.error(err))
@@ -71,6 +76,7 @@ function ItemEdit() {
                 />
 
 
+
                 <br /><label htmlFor="quantity">Bulk Size</label>
                 <br /><input className="form-control border-2 border-secondary rounded" style={{ width: "250px", height: "31px" }}
                     id="bulkSize"
@@ -79,6 +85,7 @@ function ItemEdit() {
                     onChange={event => setBulkSize(event.target.value)}
                     required
                 />
+
 
 
                 <br /><label htmlFor="image">Image</label>
@@ -92,6 +99,7 @@ function ItemEdit() {
                 />
 
 
+
                 <br /><label htmlFor="imageAlt">Image Alt</label>
                 <br /><input className="form-control border-2 border-secondary rounded" style={{ width: "250px", height: "31px" }}
                     size=""
@@ -101,6 +109,7 @@ function ItemEdit() {
                     onChange={event => setImageAlt(event.target.value)}
                     required
                 />
+
 
                 <div className="mt-2">
                     <button className="btn btn-secondary" type="submit">Submit</button>

@@ -41,6 +41,8 @@ function BasketTable(props) {
                             <th scope="col">Name</th>
                             <th scope="col">Update</th>
 
+
+
                         </tr>
                     </thead>
                     <tbody className="table-group-divider">
@@ -50,6 +52,7 @@ function BasketTable(props) {
                                 <tr>
                                     <td>{basket.name}</td>
                                     <td> <Link className="btn btn-primary" type="submit" to={`/Basket/update/${basket.id}`}>Update</Link> </td>
+
                                 </tr>
                             ))
                         }

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
 import { useNavigate } from "react-router-dom"
+
 
 function BasketsDisplay() {
   const navigate = useNavigate();
   const [baskets, setBaskets] = useState([]);
   const [quantity, setQuantity] = useState();
+
 
   useEffect(() => {
     axios.get("http://localhost:8088/basket/get")
@@ -42,6 +45,15 @@ function BasketsDisplay() {
       return items.reduce((total, item) => total + item.quantity, 0);
     };
 
+
+    const calculateTotalQuantity = (items) => {
+      if (!items || items.length === 0) {
+        return 0;
+      }
+
+      return items.reduce((total, item) => total + item.quantity, 0);
+    };
+
   return (
     <div>
       <div class="d-flex justify-content-center" style={{ padding: "10px" }}>
@@ -57,6 +69,7 @@ function BasketsDisplay() {
                     <div> 
                     Price: £{basketItem.price} 
                     </div>
+
                     
           {/* Code held for future sprint */}
 
@@ -70,6 +83,7 @@ function BasketsDisplay() {
 
                     
                     <br></br>
+
                   </div>
                 ))}
                 <br/>

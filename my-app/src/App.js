@@ -10,9 +10,11 @@ import React, { useState, useEffect } from "react";
 import Login from './Components/Homepage/Login.jsx';
 import ItemEdit from './Components/Item/ItemEdit.jsx';
 import BasketEdit from './Components/Basket/BasketEdit.jsx';
+
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import CheckOut from './Components/Checkout/CheckOut.jsx';
 import Support from './Components/Support/Support.jsx';
+
 
 
 function App() {
@@ -121,7 +123,9 @@ function App() {
             </Routes>
           </div>
 
+
         </Router>
+
       </div>
       );
 

@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, Navigate } from "react-router-dom";
+
+import { Link} from "react-router-dom";
+
 import ItemStructure from "./ItemStructure";
 
 function ItemTable(props) {
 
-    const [name, setName] = useState("")
-    const [price, setPrice] = useState("")
-    const [quantity, setQuantity] = useState("")
+
     const [items, setItems] = useState([]);
 
     function getItems() {
@@ -29,7 +29,11 @@ function ItemTable(props) {
                 name={item.name}
                 price={item.price}
                 quantity={item.quantity}
+
+                bulkSize={item.bulkSize}
                 image={item.image}
+                imageAlt={item.imageAlt}
+
 
             />
         )
@@ -47,6 +51,9 @@ function ItemTable(props) {
                             <th scope="col">Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Quantity</th>
+
+                            <th scope="col">Bulk Size</th>
+
                             <th scope="col">Update</th>
                             <th scope="col">Delete</th>
                         </tr>
@@ -59,6 +66,9 @@ function ItemTable(props) {
                                     <td>{item.name}</td>
                                     <td>{item.price}</td>
                                     <td>{item.quantity}</td>
+
+                                    <td>{item.bulkSize}</td>
+
                                     <td> <Link className="btn btn-primary" type="submit" to={`/Item/update/${item.id}`}>Update</Link> </td>
                                     <td><button type="button" className="btn btn-danger" onClick={() => {
                                         axios.delete("http://localhost:8088/item/delete/" + item.id)

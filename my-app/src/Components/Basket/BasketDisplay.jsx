@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./BasketDisplay.css";
+
+import { useNavigate } from "react-router-dom"
+
 
 function BasketsDisplay() {
+  const navigate = useNavigate();
   const [baskets, setBaskets] = useState([]);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState();
+
 
   useEffect(() => {
     axios.get("http://localhost:8088/basket/get")
@@ -25,8 +29,21 @@ function BasketsDisplay() {
       return 0;
     }
 
-    return items.reduce((total, item) => total + item.price, 0);
-  };
+  
+  const totalPrice = items.reduce((total, item) => total + item.price, 0);
+  
+  return Math.round(totalPrice * 100) / 100; // Round to 2 decimal places
+};
+
+
+
+    const calculateTotalQuantity = (items) => {
+      if (!items || items.length === 0) {
+        return 0;
+      }
+
+      return items.reduce((total, item) => total + item.quantity, 0);
+    };
 
 
     const calculateTotalQuantity = (items) => {
@@ -39,7 +56,7 @@ function BasketsDisplay() {
 
   return (
     <div>
-      <div className="card-group d-inline-flex padding" style={{ padding: "10px" }}>
+      <div class="d-flex justify-content-center" style={{ padding: "10px" }}>
         <div class="card border-dark mb-3" style={{ width: "17%", textAlign: "center" }}>
           <div class="card-body"></div>
           {baskets.map(basket => (
@@ -52,16 +69,21 @@ function BasketsDisplay() {
                     <div> 
                     Price: £{basketItem.price} 
                     </div>
-                    <div className="quantity">
-                      
-                    <button onClick={() => setQuantity(quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button>
-          
-                   <div id="quantityChange" className="quantity">{quantity}</div>
 
-                   <button onClick={() => setQuantity(quantity + 1)} className="increment" class="bi bi-plus-lg">+</button>
+                    
+          {/* Code held for future sprint */}
 
+                    {/* <div className="quantity"> 
+                    Quantity:  */}
+                    {/* <button onClick={() => setQuantity(quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button>  */}
+                    {/* <div id="quantityChange" className="quantity">{basketItem.quantity}</div> */}
+                   {/* <button onClick={() => setQuantity(quantity + 1)} className="increment" class="bi bi-plus-lg">+</button> */}
                     {/* {basketItem.quantity} */}
-                    </div>
+                    {/* </div> */}
+
+                    
+                    <br></br>
+
                   </div>
                 ))}
                 <br/>
@@ -70,6 +92,12 @@ function BasketsDisplay() {
               <p>Total Quantity:{calculateTotalQuantity(basket.items)}</p>
             </div>
           ))}
+<div>
+  <button className="btn btn-primary"  onClick={() => {
+        navigate("/checkout");
+      }} >Checkout</button>
+</div>
+
         </div>
       </div>
     </div>

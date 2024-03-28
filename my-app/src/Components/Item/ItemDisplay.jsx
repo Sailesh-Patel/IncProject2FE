@@ -4,7 +4,7 @@ import ItemStructure from "./ItemStructure";
 
 function ItemDisplay({ listItems }) {
   return (
-    <div>
+    <div className="container">
       {listItems.map((item) => (
         <ItemStructure
           key={item.id}
@@ -12,7 +12,11 @@ function ItemDisplay({ listItems }) {
           name={item.name}
           price={item.price}
           image={item.image}
+
+          imageAlt={item.imageAlt}
           quantity={item.quantity}
+          bulkSize={item.bulkSize}
+
 
         />
       ))}
@@ -27,7 +31,11 @@ ItemDisplay.propTypes = {
       name: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
       image: PropTypes.string.isRequired,
+
+      imageAlt: PropTypes.string.isRequired,
       quantity: PropTypes.number.isRequired,
+      bulkSize: PropTypes.string.isRequired,
+
 
     })
   ).isRequired,

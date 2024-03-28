@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Login.css";
 
 
+<html lang="en"></html>
 
 
 function Login() {
@@ -26,7 +26,9 @@ function Login() {
       .post("http://localhost:8088/basket/create", { name, items: [] })
       .then((response) => {
         setName("");
-        navigate("/items");
+
+        navigate("/home");
+
       })
       .catch((err) => console.error(err));
   };
@@ -35,16 +37,18 @@ function Login() {
 
   return (
 <div>
-<h1 className="title" style={{ textAlign: "center" }}>Login Form</h1>
-  <div className="card-group d-inline-flex padding" style={{ padding: "10px" }}>
+
+<h2 className="title" style={{ textAlign: "center" }}>Login Form</h2>
+  <div class="d-flex justify-content-center" style={{ padding: "10px" }}>
     <div class="card border-dark mb-3" style={{ width: "17%" }}>
       
-    <form className="App" onSubmit={handleSubmit}>
-      <div className="container" id="CreateBasket">
+    <form className="container" onSubmit={handleSubmit}>
+      <div className="context" id="CreateBasket">
         <div className="row">
           <div className="col">
             <div label htmlFor="name" className="form-label">
-              <h4>Create your Username</h4>
+              <h3>Create your Username</h3>
+
             </div>
             <input
               type="text"
@@ -68,7 +72,9 @@ function Login() {
         <button type="submit" id="SubmitCreateBasket" disabled={BasketExists} className="btn btn-primary" 
         style={{textAlign: "center"}}
         onSubmit={() => {
-          navigate("/items");
+
+          navigate("/home");
+
         }}
         >
         Sign in

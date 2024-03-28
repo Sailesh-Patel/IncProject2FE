@@ -7,7 +7,9 @@ import "./ItemStructure.css";
 function ItemStructure(props) {
   const navigate = useNavigate();
   const [count, setCount] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+
+  const [quantity, setQuantity] = useState();
+
 
 
   const handleAddToBasket = () => {
@@ -37,23 +39,25 @@ function ItemStructure(props) {
 
 
 
-          <li class="list-group-item">Quantity: 
-          {/* {props.quantity}  */}
-<br></br>
+{/* Code held for future sprint */}
 
-                                       <button onClick={() => setQuantity(quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button>
-                                       
-                                        <div id="quantityChange" className="quantity">{quantity}</div>
+          {/* <li class="list-group-item">Quantity:
+           {props.quantity}
+                                      <button onClick={() => setQuantity(props.quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button>
+                                         <div id="quantityChange" className="quantity">{props.quantity}</div>
+                                        <button onClick={() => setQuantity(props.quantity + 1)} className="increment" class="bi bi-plus-lg">+</button>
+</li>  */}
 
-                                        <button onClick={() => setQuantity(quantity + 1)} className="increment" class="bi bi-plus-lg">+</button>
 
-</li> 
+
+<li class="list-group-item">Bulk Size: {props.bulkSize}</li>
+
 
         </ul>
       <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
         Add to basket
       </button>
-      {/* <button type="button" onClick={deleteItem} className="btn btn-danger">Delete</button> */}
+
       </div>
     </div>
   );
@@ -62,8 +66,12 @@ function ItemStructure(props) {
 ItemStructure.propTypes = {
   name: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
+  bulkSize: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
+
+  imageAlt: PropTypes.string.isRequired,
+
   id: PropTypes.number.isRequired,
 };
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ItemDisplay from "./ItemDisplay";
+import "./PageForItem.css";
 
 function PageForItem() {
   function getItems() {
@@ -17,7 +18,9 @@ function PageForItem() {
 
   return (
     <div>
-      <h1>Groceries</h1>
+      <h1 className="header">
+
+        </h1>
       <div id="ItemDisplay">
         <ItemDisplay listItems={items} />
       </div>

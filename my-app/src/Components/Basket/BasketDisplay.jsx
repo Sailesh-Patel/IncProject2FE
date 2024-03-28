@@ -46,14 +46,6 @@ function BasketsDisplay() {
     };
 
 
-    const calculateTotalQuantity = (items) => {
-      if (!items || items.length === 0) {
-        return 0;
-      }
-
-      return items.reduce((total, item) => total + item.quantity, 0);
-    };
-
   return (
     <div>
       <div class="d-flex justify-content-center" style={{ padding: "10px" }}>

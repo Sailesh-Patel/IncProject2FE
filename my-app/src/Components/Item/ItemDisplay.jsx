@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ItemStructure from "./ItemStructure";
-import "./ItemDisplay.css";
 
 function ItemDisplay({ listItems }) {
   return (

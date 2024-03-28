@@ -9,3 +9,9 @@
     min-height: 40px;
     max-height: 40px;
 }
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}

@@ -11,8 +11,6 @@ import Login from './Components/Homepage/Login.jsx';
 import ItemEdit from './Components/Item/ItemEdit.jsx';
 import BasketEdit from './Components/Basket/BasketEdit.jsx';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import DarkMode from "./Components/DarkMode/DarkMode.js";
-import { Navbar } from "./Components/navbar/Navbar.jsx";
 import CheckOut from './Components/Checkout/CheckOut.jsx';
 import Support from './Components/Support/Support.jsx';
 
@@ -35,7 +33,7 @@ function App() {
 
 
       <div class="p-3 mb-2 bg-warning text-dark" style={{ overflow: "auto" }}>
-        {/* <Navbar /> */}
+
 
 
         <Router>
@@ -57,10 +55,12 @@ function App() {
 
 <ul>
 
-              <li class="nav-item">
+      {/* code held for testing */}
+
+              {/* <li class="nav-item">
                 <Link class="nav-item nav-link active" to="/"
                   aria-describedby='Navigation link to the login page'>Login</Link>
-              </li>
+              </li> */}
 
                   <li class="nav-item">
                     <Link className="nav-item nav-link active" to='/home' 
@@ -81,8 +81,8 @@ function App() {
                 <Link className="nav-item nav-link active" to='/basket'
                   aria-describedby='Navigation link to the basket page'>
                       <ShoppingBasketIcon />
-                      {/* Basket */}
-                      {/* <span className="header_optionLineTwo header_basketCount">{.length}</span> */}
+
+    
                     </Link>
                   </li>                  
 
@@ -90,14 +90,13 @@ function App() {
                 <Link className="nav-item nav-link active" to='/support'
                   aria-describedby='Navigation link to the support page'>Support</Link>
               </li>
-                  {/* <li>
-                    <DarkMode />
-                  </li> */}
 
-              <li class="nav-item ">
+      {/* code held for testing */}
+
+              {/* <li class="nav-item ">
                 <Link className="nav-item nav-link active" to='/createitems'
                   aria-describedby='Navigation link to the create items page'>Admin</Link>
-              </li>
+              </li> */}
 </ul>
 
               </div>

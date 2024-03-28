@@ -19,7 +19,7 @@ function PageForItem() {
   return (
     <div>
       <h1 className="header">
-        {/* Groceries */}
+
         </h1>
       <div id="ItemDisplay">
         <ItemDisplay listItems={items} />

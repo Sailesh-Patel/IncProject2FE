@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import CheckOut from "../Checkout/CheckOut";
 import { useNavigate } from "react-router-dom"
-// import {handleAddToBasket} from "ItemStructure";
-// import "./BasketDisplay.css";
 
 function BasketsDisplay() {
   const navigate = useNavigate();
@@ -29,8 +26,7 @@ function BasketsDisplay() {
       return 0;
     }
 
-  //   return items.reduce((total, item) => total + item.price, 0);
-  // };
+  
   const totalPrice = items.reduce((total, item) => total + item.price, 0);
   
   return Math.round(totalPrice * 100) / 100; // Round to 2 decimal places
@@ -62,12 +58,13 @@ function BasketsDisplay() {
                     Price: £{basketItem.price} 
                     </div>
                     
+          {/* Code held for future sprint */}
+
                     {/* <div className="quantity"> 
                     Quantity:  */}
                     {/* <button onClick={() => setQuantity(quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button>  */}
                     {/* <div id="quantityChange" className="quantity">{basketItem.quantity}</div> */}
                    {/* <button onClick={() => setQuantity(quantity + 1)} className="increment" class="bi bi-plus-lg">+</button> */}
-
                     {/* {basketItem.quantity} */}
                     {/* </div> */}
 

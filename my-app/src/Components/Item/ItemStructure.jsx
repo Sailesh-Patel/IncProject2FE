@@ -36,18 +36,14 @@ function ItemStructure(props) {
           <li class="list-group-item">Price: £{props.price} </li>
 
 
+{/* Code held for future sprint */}
 
-          {/* <li class="list-group-item">Quantity:  */}
-          {/* {props.quantity}  */}
-
-
-                                       {/* <button onClick={() => setQuantity(props.quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button> */}
-                                       
-                                        {/* <div id="quantityChange" className="quantity">{props.quantity}</div> */}
-
-                                        {/* <button onClick={() => setQuantity(props.quantity + 1)} className="increment" class="bi bi-plus-lg">+</button> */}
-
-{/* </li>  */}
+          {/* <li class="list-group-item">Quantity:
+           {props.quantity}
+                                      <button onClick={() => setQuantity(props.quantity - 1)}  className="decrement" class="bi bi-dash-lg">-</button>
+                                         <div id="quantityChange" className="quantity">{props.quantity}</div>
+                                        <button onClick={() => setQuantity(props.quantity + 1)} className="increment" class="bi bi-plus-lg">+</button>
+</li>  */}
 
 
 
@@ -57,7 +53,6 @@ function ItemStructure(props) {
       <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
         Add to basket
       </button>
-      {/* <button type="button" onClick={deleteItem} className="btn btn-danger">Delete</button> */}
       </div>
     </div>
   );
